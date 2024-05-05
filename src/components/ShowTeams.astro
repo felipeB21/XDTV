@@ -1,0 +1,24 @@
+---
+import { Teams } from "../data/Teams";
+---
+
+<div>
+  <h2 class="text-2xl font-medium">XDefiant PRO Teams</h2>
+  <section class="mt-4">
+    <ul class="flex gap-10">
+      {
+        Teams.map((t) => (
+          <li>
+            <a
+              class="flex flex-col items-center gap-1"
+              href={`/team/${t.name}`}
+            >
+              <h3 class="font-medium">{t.name}</h3>
+              <img class="w-[60px] rounded-full" src={t.logo} alt={t.name} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</div>

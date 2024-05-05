@@ -1,0 +1,33 @@
+---
+import X from "../svg/X.astro";
+const LINKS = [
+  { name: "Teams", url: "/teams" },
+  { name: "Players", url: "/players" },
+  { name: "Matches", url: "/matches" },
+  { name: "Tournaments", url: "/tournaments" },
+];
+---
+
+<header class="border-b border-neutral-700 py-3">
+  <div class="max-w-5xl px-5 mx-auto flex items-center justify-between">
+    <div>
+      <a class="text-xl font-medium" href="/">XDTV</a>
+    </div>
+    <nav>
+      <ul class="flex items-center gap-5">
+        {
+          LINKS.map((link) => (
+            <li>
+              <a class="text-neutral-400 hover:text-white" href={link.url}>
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div>
+      <a href="https://twitter.com/XDTVorg" target="_blank"><X /></a>
+    </div>
+  </div>
+</header>
